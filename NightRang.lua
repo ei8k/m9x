@@ -5278,12 +5278,7 @@ return Send_Options(msg,msg.sender_user_id_,"Open_Status","• تم فتح ال�
 end
 
 if text == 'تفعيل جلب الرابط' or text == 'تفعيل الرابط' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Admin(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص- ادمن - مدير*')
 end  
@@ -5291,12 +5286,7 @@ redis:set(bot_id..'NightRang:Link_Group'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل جلب الرابط المجموعه') 
 end
 if text == 'تعطيل جلب الرابط' or text == 'تعطيل الرابط' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Admin(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص- ادمن - مدير*')
 end
@@ -5304,12 +5294,7 @@ redis:del(bot_id..'NightRang:Link_Group'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل جلب رابط المجموعه') 
 end
 if text == 'تفعيل الترحيب' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Admin(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص- ادمن - مدير*')
 end  
@@ -5317,12 +5302,7 @@ redis:set(bot_id..'NightRang:Chek:Welcome'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل ترحيب المجموعه') 
 end
 if text == 'تعطيل الترحيب' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Admin(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص- ادمن - مدير*')
 end  
@@ -5330,12 +5310,7 @@ redis:del(bot_id..'NightRang:Chek:Welcome'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل ترحيب المجموعه') 
 end
 if text == 'تفعيل الردود' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5343,12 +5318,7 @@ redis:del(bot_id..'NightRang:Reply:Manager'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل الردود') 
 end
 if text == 'تعطيل الردود' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end  
@@ -5356,12 +5326,7 @@ redis:set(bot_id..'NightRang:Reply:Manager'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل الردود' ) 
 end
 if text == 'تفعيل الردود العامه' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5370,12 +5335,7 @@ return send(msg.chat_id_, msg.id_,'• تم تفعيل الردود العامه
 end
 
 if text == 'تعطيل الردود العامه' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end  
@@ -5383,12 +5343,7 @@ redis:set(bot_id..'NightRang:Reply:Sudo'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل الردود العامه ' ) 
 end
 if text == 'تفعيل ضافني' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5396,12 +5351,7 @@ redis:set(bot_id..'Added:Me'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل امر ضافني') 
 end
 if text == 'تفعيل صيح' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5409,12 +5359,7 @@ redis:set(bot_id..'Seh:User'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل امر صيح') 
 end
 if text == 'تفعيل اطردني' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5422,12 +5367,7 @@ redis:del(bot_id..'NightRang:Cheking:Kick:Me:Group'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل امر اطردني') 
 end
 if text == 'تعطيل ضافني' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5435,12 +5375,7 @@ redis:del(bot_id..'Added:Me'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل امر ضافني') 
 end
 if text == 'تعطيل صيح' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5448,12 +5383,7 @@ redis:del(bot_id..'Seh:User'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل امر صيح') 
 end
 if text == 'تعطيل اطردني' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end  
@@ -5461,12 +5391,7 @@ redis:set(bot_id..'NightRang:Cheking:Kick:Me:Group'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل امر اطردني') 
 end
 if text == 'تفعيل المغادره' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end   
+   
 if not Dev_Bots(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - Carbon*')
 end
@@ -5474,24 +5399,14 @@ redis:del(bot_id..'NightRang:Lock:Left'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل مغادرة البوت') 
 end
 if text=="اذاعه بالتثبيت" and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 redis:setex(bot_id.."BotNightRang:Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"ارسل لي المنشور الان\nيمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⚠لالغاء الاذاعه ارسل : الغاء") 
 return false
 end
 
 if text == 'تعطيل المغادره' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 if not Dev_Bots(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - Carbon*')
 end
@@ -5499,12 +5414,7 @@ redis:set(bot_id..'NightRang:Lock:Left'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_, '• تم تعطيل مغادرة البوت') 
 end
 if text == 'تفعيل الاذاعه' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 if not Dev_Bots(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - Carbon*')
 end
@@ -5512,12 +5422,7 @@ redis:del(bot_id..'NightRang:Broadcasting:Bot')
 return send(msg.chat_id_, msg.id_,'• تم تفعيل الاذاعه \n• الان يمكن للCommander  الاذاعه' ) 
 end
 if text == 'تعطيل الاذاعه' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 if not Dev_Bots(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - Carbon*')
 end
@@ -5525,12 +5430,7 @@ redis:set(bot_id..'NightRang:Broadcasting:Bot',true)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل الاذاعه') 
 end
 if text == 'تفعيل الايدي' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5538,12 +5438,7 @@ redis:del(bot_id..'NightRang:Lock:Id:Photo'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل الايدي') 
 end
 if text == 'تعطيل الايدي' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end  
@@ -5551,12 +5446,7 @@ redis:set(bot_id..'NightRang:Lock:Id:Photo'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل الايدي') 
 end
 if text == 'تفعيل الايدي بالصوره' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5564,12 +5454,7 @@ redis:del(bot_id..'NightRang:Lock:Id:Py:Photo'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل الايدي بالصوره') 
 end
 if text == 'تعطيل الايدي بالصوره' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end  
@@ -5577,12 +5462,7 @@ redis:set(bot_id..'NightRang:Lock:Id:Py:Photo'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل الايدي بالصوره') 
 end
 if text == 'تعطيل الالعاب' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end   
@@ -5590,12 +5470,7 @@ redis:del(bot_id..'NightRang:Lock:Game:Group'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل الالعاب') 
 end
 if text == 'تفعيل الالعاب' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ*')
 end  
@@ -5603,12 +5478,7 @@ redis:set(bot_id..'NightRang:Lock:Game:Group'..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,'• تم تفعيل الالعاب') 
 end
 if text == 'تفعيل البوت الخدمي' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 if not Dev_Bots(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - Carbon*')
 end
@@ -5616,12 +5486,7 @@ redis:del(bot_id..'NightRang:Free:Bot')
 return send(msg.chat_id_, msg.id_,'• تم تفعيل البوت الخدمي \n• الان يمكن الجميع تفعيله') 
 end
 if text == 'تعطيل البوت الخدمي' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 if not Dev_Bots(msg) then
 return send(msg.chat_id_,msg.id_,'*•اهلا عزيزي \n عذرا الامر يخص - Carbon*')
 end
@@ -5629,12 +5494,7 @@ redis:set(bot_id..'NightRang:Free:Bot',true)
 return send(msg.chat_id_, msg.id_,'• تم تعطيل البوت الخدمي') 
 end
 if text == 'تعطيل الطرد' or text == 'تعطيل الحظر' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي *')
 end
@@ -5642,12 +5502,7 @@ redis:set(bot_id..'NightRang:Lock:Ban:Group'..msg.chat_id_,'true')
 return send(msg.chat_id_, msg.id_, '• تم تعطيل - ( الحظر - الطرد ) ')
 end
 if text == 'تفعيل الطرد' or text == 'تفعيل الحظر' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي *')
 end
@@ -5655,12 +5510,7 @@ redis:del(bot_id..'NightRang:Lock:Ban:Group'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_, '• تم تفعيل - ( الحظر - الطرد ) ')
 end
 if text == 'تعطيل الرفع' or text == 'تعطيل الترقيه' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي *')
 end
@@ -5668,12 +5518,7 @@ redis:set(bot_id..'NightRang:Cheking:Seted'..msg.chat_id_,'true')
 return send(msg.chat_id_, msg.id_, '• تم تعطيل رفع - ( الادمن - المميز ) ')
 end
 if text == 'تفعيل الرفع' or text == 'تفعيل الترقيه' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي *')
 end
@@ -5681,12 +5526,7 @@ redis:del(bot_id..'NightRang:Cheking:Seted'..msg.chat_id_)
 return send(msg.chat_id_, msg.id_, '• تم تفعيل رفع - ( الادمن - المميز ) ')
 end
 if text == 'تعطيل صورتي' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي *')
 end
@@ -5694,12 +5534,7 @@ redis:set(bot_id..'my_photo:status:bot'..msg.chat_id_,'yazon')
 return send(msg.chat_id_, msg.id_, '• تم تعطيل - ( امر صورتي ) ')
 end
 if text == 'تفعيل صورتي' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 return send(msg.chat_id_,msg.id_,'*• اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي *')
 end
@@ -5708,12 +5543,7 @@ return send(msg.chat_id_, msg.id_, '• تم تفعيل - ( امر صورتي ) 
 end
 
 if text and text:match("^صيح (.*)$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local username = text:match("^صيح (.*)$") 
 if redis:get(bot_id..'Seh:User'..msg.chat_id_) then
 function start_function(extra, result, success)
@@ -5822,12 +5652,7 @@ end,nil)
 return false 
 end
 if text == "الرابط" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
 local status_Link = redis:get(bot_id.."NightRang:Link_Group"..msg.chat_id_)
 local link = redis:get(bot_id.."NightRang:link:set:Group"..msg.chat_id_)     
@@ -5846,12 +5671,7 @@ end,nil)
 return false 
 end
 if text == "الترحيب" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 if redis:get(bot_id.."NightRang:Get:Welcome:Group"..msg.chat_id_)   then 
 Welcome = redis:get(bot_id.."NightRang:Get:Welcome:Group"..msg.chat_id_)  
 else 
@@ -5870,56 +5690,31 @@ end
 return false 
 end
 if text == "مسح الرابط" and Admin(msg) or text == "حذف الرابط" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 send(msg.chat_id_,msg.id_,"• تم ازالة رابط المجموعه")           
 redis:del(bot_id.."NightRang:link:set:Group"..msg.chat_id_) 
 return false 
 end
 if text == "حذف الصوره" and Admin(msg) or text == "مسح الصوره" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 https.request("https://api.telegram.org/bot"..token.."/deleteChatPhoto?chat_id="..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,"• تم ازالة صورة المجموعه") 
 return false 
 end
 if text == "مسح الترحيب" and Admin(msg) or text == "حذف الترحيب" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 redis:del(bot_id.."NightRang:Get:Welcome:Group"..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,"• تم ازالة ترحيب المجموعه") 
 return false 
 end
 if text == "مسح القوانين" and Admin(msg) or text == "حذف القوانين" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 send(msg.chat_id_, msg.id_,"• تم ازالة قوانين المجموعه")  
 redis:del(bot_id.."NightRang::Rules:Group"..msg.chat_id_) 
 return false 
 end
 if text == 'حذف الايدي' and Owner(msg) or text == 'مسح الايدي' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:Set:Id:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '• تم ازالة كليشة الايدي ')
 return false 
@@ -5955,12 +5750,7 @@ send(msg.chat_id_, msg.id_,"• تم وضع زمن التكرار : "..text:matc
 return false 
 end
 if text == "مسح قائمة المنع" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end   
+   
 local list = redis:smembers(bot_id.."NightRang:List:Filter"..msg.chat_id_)  
 for k,v in pairs(list) do  
 redis:del(bot_id.."NightRang:Filter:Reply1"..msg.sender_user_id_..msg.chat_id_)  
@@ -5971,12 +5761,7 @@ send(msg.chat_id_, msg.id_,"• تم مسح قائمة المنع")
 return false 
 end
 if text == "قائمة المنع" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end   
+   
 local list = redis:smembers(bot_id.."NightRang:List:Filter"..msg.chat_id_)  
 t = "\n• قائمة المنع \n━━━━━━━━\n"
 for k,v in pairs(list) do  
@@ -5990,35 +5775,20 @@ send(msg.chat_id_, msg.id_,t)
 return false 
 end
 if text and text == "منع" and msg.reply_to_message_id_ == 0 and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end       
+       
 send(msg.chat_id_, msg.id_,"• ارسل الكلمه لمنعها")  
 redis:set(bot_id.."NightRang:Filter:Reply1"..msg.sender_user_id_..msg.chat_id_,"SetFilter")  
 return false  
 end
 
 if text == "الغاء منع" and msg.reply_to_message_id_ == 0 and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end    
+    
 send(msg.chat_id_, msg.id_,"• ارسل الكلمه الان")  
 redis:set(bot_id.."NightRang:Filter:Reply1"..msg.sender_user_id_..msg.chat_id_,"DelFilter")  
 return false 
 end
 if text ==("تثبيت") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if redis:sismember(bot_id.."NightRang:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"• التثبيت مقفل من قبل المنشئين")  
 return false end
@@ -6038,12 +5808,7 @@ end;end,nil)
 return false 
 end
 if text == "الغاء التثبيت" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if redis:sismember(bot_id.."NightRang:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"• التثبيت مقفل من قبل المنشئين")  
 return false end
@@ -6063,12 +5828,7 @@ end;end,nil)
 return false 
 end
 if text == 'طرد المحذوفين' or text == 'مسح المحذوفين' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 if Admin(msg) then    
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),offset_ = 0,limit_ = 1000}, function(arg,del)
 for k, v in pairs(del.members_) do
@@ -6082,12 +5842,7 @@ end
 return false 
 end
 if text ==("مسح المطرودين") and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end    
+    
 local function delbans(extra, result)  
 if not msg.can_be_deleted_ == true then  
 send(msg.chat_id_, msg.id_, "•  يرجى ترقيتي ادمن هنا") 
@@ -6103,12 +5858,7 @@ end
 return false 
 end
 if text == "مسح البوتات" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 tdcli_function ({ ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(arg,tah)  
 local admins = tah.members_  
 local x = 0
@@ -6131,12 +5881,7 @@ end,nil)
 return false 
 end
 if text == ("كشف البوتات") and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
 text = "\n• قائمة البوتات \n━━━━━━━━\n"
@@ -6169,12 +5914,7 @@ return false
 end
 
 if text and text:match("^تنزيل الكل @(.*)$") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 function FunctionStatus(extra, result, success)
 if (result.id_) then
 if Dev_Bots_User(result.id_) == true then
@@ -6239,12 +5979,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل الكل @(.*)$")}, FunctionStatus, nil)
 end
 if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 function Function_Status(extra, result, success)
 if Dev_Bots_User(result.sender_user_id_) == true then
 send(msg.chat_id_, msg.id_,"•  لا تستطيع تنزيل Carbon")
@@ -6327,12 +6062,7 @@ end,nil)
 return false end
 
 if text==("عدد المجموعه") and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end  
+  
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_,msg.id_,"•  البوت ليس ادمن هنا \n") 
 return false  
@@ -6348,12 +6078,7 @@ send(msg.chat_id_, msg.id_, yazon)
 end,nil)end,nil)
 end
 if text == "غادر" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 if DeveloperBot(msg) and not redis:get(bot_id.."NightRang:Lock:Left"..msg.chat_id_) then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
 send(msg.chat_id_, msg.id_,"-") 
@@ -6361,12 +6086,7 @@ redis:srem(bot_id.."NightRang:ChekBotAdd",msg.chat_id_)
 end
 end
 if text and text:match("^غادر (-%d+)$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local GP_ID = {string.match(text, "^(غادر) (-%d+)$")}
 if DeveloperBot(msg) and not redis:get(bot_id.."NightRang:Lock:Left"..msg.chat_id_) then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=GP_ID[2],user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
@@ -6377,12 +6097,7 @@ redis:srem(bot_id.."NightRang:ChekBotAdd",GP_ID[2])
 end
 end
 if text == "الحمايه" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end    
+    
 if redis:get(bot_id.."NightRang:lockpin"..msg.chat_id_) then    
 lock_pin = "✔️"
 else 
@@ -6741,161 +6456,86 @@ end
 send(msg.chat_id_, msg.id_,'• تم ازالة *- '..Msg_Num..'* رساله من المجموعه')  
 end
 if text and text:match("^تغيير رد Commander  (.*)$") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Teext = text:match("^تغيير رد Commander  (.*)$") 
 redis:set(bot_id.."NightRang:Developer:Bot:Reply"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"•  تم تغيير رد Commander  الى :"..Teext)
 return false end
 if text and text:match("^تغيير رد المنشئ الاساسي (.*)$") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Teext = text:match("^تغيير رد المنشئ الاساسي (.*)$") 
 redis:set(bot_id.."NightRang:President:Group:Reply"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"•  تم تغيير رد المنشئ الاساسي الى :"..Teext)
 return false end
 if text and text:match("^تغيير رد المنشئ (.*)$") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Teext = text:match("^تغيير رد المنشئ (.*)$") 
 redis:set(bot_id.."NightRang:Constructor:Group:Reply"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"•  تم تغيير رد المنشئ الى :"..Teext)
 return false end
 if text and text:match("^تغيير رد المدير (.*)$") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Teext = text:match("^تغيير رد المدير (.*)$") 
 redis:set(bot_id.."NightRang:Manager:Group:Reply"..msg.chat_id_,Teext) 
 send(msg.chat_id_, msg.id_,"•  تم تغيير رد المدير الى :"..Teext)
 return false end
 if text and text:match("^تغيير رد الادمن (.*)$") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Teext = text:match("^تغيير رد الادمن (.*)$") 
 redis:set(bot_id.."NightRang:Admin:Group:Reply"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"•  تم تغيير رد الادمن الى :"..Teext)
 return false end
 if text and text:match("^تغيير رد المميز (.*)$") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Teext = text:match("^تغيير رد المميز (.*)$") 
 redis:set(bot_id.."NightRang:Vip:Group:Reply"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"•  تم تغيير رد المميز الى :"..Teext)
 return false end
 if text and text:match("^تغيير رد العضو (.*)$") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Teext = text:match("^تغيير رد العضو (.*)$") 
 redis:set(bot_id.."NightRang:Mempar:Group:Reply"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"•  تم تغيير رد العضو الى :"..Teext)
 return false end
 if text == 'حذف رد Commander ' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:Developer:Bot:Reply"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"• تم حدف رد Commander ")
 return false end
 if text == 'حذف رد المنشئ الاساسي' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:President:Group:Reply"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"• تم حذف رد المنشئ الاساسي ")
 return false end
 if text == 'حذف رد المنشئ' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:Constructor:Group:Reply"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"• تم حذف رد المنشئ ")
 return false end
 if text == 'حذف رد المدير' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:Manager:Group:Reply"..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,"• تم حذف رد المدير ")
 return false end
 if text == 'حذف رد الادمن' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:Admin:Group:Reply"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"• تم حذف رد الادمن ")
 return false end
 if text == 'حذف رد المميز' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:Vip:Group:Reply"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"• تم حذف رد المميز")
 return false end
 if text == 'حذف رد العضو' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:Mempar:Group:Reply"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"• تم حذف رد العضو")
 return false 
 end
 
 if text == ("مسح الردود") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local list = redis:smembers(bot_id.."NightRang:List:Manager"..msg.chat_id_.."")
 for k,v in pairs(list) do
 redis:del(bot_id.."NightRang:Add:Rd:Manager:Gif"..v..msg.chat_id_)   
@@ -6912,12 +6552,7 @@ send(msg.chat_id_, msg.id_,"• تم مسح قائمة الردود")
 return false 
 end
 if text == ("الردود") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local list = redis:smembers(bot_id.."NightRang:List:Manager"..msg.chat_id_.."")
 text = "• قائمة الردود \n━━━━━━━━\n"
 for k,v in pairs(list) do
@@ -6947,12 +6582,7 @@ send(msg.chat_id_, msg.id_,"["..text.."]")
 return false 
 end
 if text == "الصلاحيات" and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local list = redis:smembers(bot_id.."NightRang:Validitys:Group"..msg.chat_id_)
 if #list == 0 then
 send(msg.chat_id_, msg.id_,"• لا توجد صلاحيات مضافه هنا")
@@ -6970,12 +6600,7 @@ end
 send(msg.chat_id_, msg.id_,Validity)
 end
 if text == "الاوامر المضافه" and Constructor(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local list = redis:smembers(bot_id.."NightRang:Command:List:Group"..msg.chat_id_.."")
 Command = "• قائمة الاوامر المضافه  \n━━━━━━━━\n"
 for k,v in pairs(list) do
@@ -6992,12 +6617,7 @@ end
 send(msg.chat_id_, msg.id_,"["..Command.."]")
 end
 if text == "حذف الاوامر المضافه" and Constructor(msg) or text == "مسح الاوامر المضافه" and Constructor(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local list = redis:smembers(bot_id.."NightRang:Command:List:Group"..msg.chat_id_)
 for k,v in pairs(list) do
 redis:del(bot_id.."NightRang:Get:Reides:Commands:Group"..msg.chat_id_..":"..v)
@@ -7006,46 +6626,26 @@ end
 send(msg.chat_id_, msg.id_,"• تم مسح جميع الاوامر التي تم اضافتها")  
 end
 if text == "مسح الصلاحيات" and Constructor(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local list = redis:smembers(bot_id.."NightRang:Validitys:Group"..msg.chat_id_)
 for k,v in pairs(list) do;redis:del(bot_id.."NightRang:Add:Validity:Group:Rt"..v..msg.chat_id_);redis:del(bot_id.."NightRang:Validitys:Group"..msg.chat_id_);end
 send(msg.chat_id_, msg.id_,"• تم مسح صلاحيات المجموعه")
 end
 if text == "اضف رد" and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 send(msg.chat_id_, msg.id_,"• ارسل الان الكلمه لاضافتها في الردود ")
 redis:set(bot_id.."NightRang:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
 if text == "حذف رد" and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 send(msg.chat_id_, msg.id_,"• ارسل الان الكلمه لحذفها من الردود")
 redis:set(bot_id.."NightRang:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true2")
 return false 
 end
 
 if text == ("مسح الردود العامه") and DeveloperBot1(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local list = redis:smembers(bot_id.."NightRang:List:Rd:Sudo")
 for k,v in pairs(list) do
 redis:del(bot_id.."NightRang:Add:Rd:Sudo:Gif"..v)   
@@ -7062,12 +6662,7 @@ send(msg.chat_id_, msg.id_,"• تم حذف الردود العامه ")
 return false 
 end
 if text == ("الردود العامه") and DeveloperBot1(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local list = redis:smembers(bot_id.."NightRang:List:Rd:Sudo")
 text = "\n• قائمة الردود العامه  \n━━━━━━━━\n"
 for k,v in pairs(list) do
@@ -7097,56 +6692,31 @@ send(msg.chat_id_, msg.id_,"["..text.."]")
 return false 
 end
 if text == "اضف رد عام" and DeveloperBot1(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 send(msg.chat_id_, msg.id_,"• ارسل الان الكلمه لاضافتها في الردود العامه ")
 redis:set(bot_id.."NightRang:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
 if text == "حذف رد عام" and DeveloperBot1(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 send(msg.chat_id_, msg.id_,"• ارسل الان الكلمه لحذفها من الردود العامه ")
 redis:set(bot_id.."NightRang:Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
 if text == "اضف امر" and Constructor(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:set(bot_id.."NightRang:Command:Reids:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 send(msg.chat_id_, msg.id_,"• الان ارسل لي الامر القديم ...")  
 return false 
 end
 if text == "حذف امر" and Constructor(msg) or text == "مسح امر" and Constructor(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 redis:set(bot_id.."NightRang:Command:Reids:Group:Del"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 send(msg.chat_id_, msg.id_,"• ارسل الان الامر الذي قمت بوضعه مكان الامر القديم")  
 return false 
 end
 if text and text:match("^مسح صلاحيه (.*)$") and Admin(msg) or text and text:match("^حذف صلاحيه (.*)$") and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلاحيه (.*)$")
 redis:del(bot_id.."NightRang:Add:Validity:Group:Rt"..ComdNew..msg.chat_id_)
 redis:srem(bot_id.."NightRang:Validitys:Group"..msg.chat_id_,ComdNew)  
@@ -7154,12 +6724,7 @@ send(msg.chat_id_, msg.id_, "\n• تم مسح ← { "..ComdNew..' } من الص
 return false 
 end
 if text and text:match("^اضف صلاحيه (.*)$") and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local ComdNew = text:match("^اضف صلاحيه (.*)$")
 redis:set(bot_id.."NightRang:Add:Validity:Group:Rt:New"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
 redis:sadd(bot_id.."NightRang:Validitys:Group"..msg.chat_id_,ComdNew)  
@@ -7176,43 +6741,23 @@ send(msg.chat_id_, msg.id_,'[@'..UserName_Dev..']')
 end
 end
 if text == 'وضع كليشه المطور' and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:set(bot_id..'NightRang:GetTexting:DevSlbotss'..msg.chat_id_..':'..msg.sender_user_id_,true)
 send(msg.chat_id_,msg.id_,'•  ارسل لي الكليشه الان')
 return false 
 end
 if text == 'حذف كليشه المطور' and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id..'NightRang:Texting:DevSlbotss')
 send(msg.chat_id_, msg.id_,'•  تم حذف كليشه Commander ')
 end
 if text == "تغيير اسم البوت" and Dev_Bots(msg) or text == "تغيير اسم البوت" and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 redis:setex(bot_id.."NightRang:Change:Name:Bot"..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"•  ارسل لي الاسم الان ")  
 end
 if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and DeveloperBot(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 if redis:get(bot_id.."NightRang:Broadcasting:Bot") and not Dev_Bots(msg) then 
 send(msg.chat_id_, msg.id_,"• تم تعطيل الاذاعه من قبل Carbon !")
 return false end
@@ -7221,12 +6766,7 @@ send(msg.chat_id_, msg.id_,"• ارسل لي المنشور الان\n• يم�
 return false
 end
 if text=="اذاعه" and msg.reply_to_message_id_ == 0 and DeveloperBot(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 if redis:get(bot_id.."NightRang:Broadcasting:Bot") and not Dev_Bots(msg) then 
 send(msg.chat_id_, msg.id_,"• تم تعطيل الاذاعه من قبل Carbon !")
 return false end
@@ -7235,12 +6775,7 @@ send(msg.chat_id_, msg.id_,"• ارسل لي المنشور الان\n• يم�
 return false
 end
 if text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and DeveloperBot(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 if redis:get(bot_id.."NightRang:Broadcasting:Bot") and not Dev_Bots(msg) then 
 send(msg.chat_id_, msg.id_,"• تم تعطيل الاذاعه من قبل Carbon !")
 return false end
@@ -7249,12 +6784,7 @@ send(msg.chat_id_, msg.id_,"• ارسل لي التوجيه الان\n• لي�
 return false
 end
 if text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and DeveloperBot(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 if redis:get(bot_id.."NightRang:Broadcasting:Bot") and not Dev_Bots(msg) then 
 send(msg.chat_id_, msg.id_,"• تم تعطيل الاذاعه من قبل Carbon !")
 return false end
@@ -7263,12 +6793,7 @@ send(msg.chat_id_, msg.id_,"• ارسل لي التوجيه الان\n• لي�
 return false
 end
 if text == 'تعيين الايدي' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:setex(bot_id.."NightRang:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
 send(msg.chat_id_, msg.id_,[[
 • ارسل الان النص
@@ -7614,12 +7139,7 @@ tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(ms
 return false
 end
 if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 function reply(extra, result, success)
 redis:del(bot_id.."NightRang:Msg_User"..msg.chat_id_..":"..result.sender_user_id_) 
 redis:incrby(bot_id.."NightRang:Num:Message:User"..msg.chat_id_..":"..result.sender_user_id_,text:match("^اضف رسائل (%d+)$"))  
@@ -7629,12 +7149,7 @@ tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(ms
 return false
 end
 if text == "مسح المشتركين" and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local pv = redis:smembers(bot_id..'NightRang:Num:User:Pv')  
 local sendok = 0
 for i = 1, #pv do
@@ -7659,12 +7174,7 @@ end
 return false
 end
 if text == "مسح المجموعات" and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local group = redis:smembers(bot_id..'NightRang:ChekBotAdd')  
 local w = 0
 local q = 0
@@ -7710,12 +7220,7 @@ end,nil)
 end
 end
 if text == "اطردني" or text == "طردني" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not redis:get(bot_id.."NightRang:Cheking:Kick:Me:Group"..msg.chat_id_) then
 if Rank_Checking(msg.sender_user_id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, "\n•  عذرا لا استطيع طرد "..Get_Rank(msg.sender_user_id_,msg.chat_id_).." ")
@@ -7745,12 +7250,7 @@ send(msg.chat_id_, msg.id_,"•  امر اطردني تم تعطيله من قب
 end
 end
 if text and text:match("^رفع القيود @(.*)") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local username = text:match("^رفع القيود @(.*)") 
 function Function_Status(extra, result, success)
 if result.id_ then
@@ -7772,12 +7272,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Status, nil)
 end
 if text == "رفع القيود" and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 function Function_Status(extra, result, success)
 if Dev_Bots(msg) then
 redis:srem(bot_id.."NightRang:Removal:User:Groups",result.sender_user_id_)
@@ -7794,12 +7289,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_Status, nil)
 end
 if text and text:match("^كشف القيود @(.*)") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local username = text:match("^كشف القيود @(.*)") 
 function Function_Status(extra, result, success)
 if result.id_ then
@@ -7831,12 +7321,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Status, nil)
 end
 if text == "كشف القيود" and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 function Function_Status(extra, result, success)
 if redis:sismember(bot_id.."NightRang:Silence:User:Group"..msg.chat_id_,result.sender_user_id_) then
 Muted = "مكتوم"
@@ -7863,12 +7348,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_Status, nil)
 end
 if text ==("رفع الادمنيه") and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local num2 = 0
 local admins = data.members_
@@ -7914,12 +7394,7 @@ return false
 end
 end
 if text == ("مسح الردود المتعدده") and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local list = redis:smembers(bot_id.."botss:NightRang:List:Rd:Sudo")
 for k,v in pairs(list) do  
 redis:del(bot_id.."botss:NightRang:Add:Rd:Sudo:Text"..v) 
@@ -7930,12 +7405,7 @@ end
 send(msg.chat_id_, msg.id_,"تم حذف ردود المتعدده")
 end
 if text == ("الردود المتعدده") and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 local list = redis:smembers(bot_id.."botss:NightRang:List:Rd:Sudo")
 text = "\nقائمة ردود المتعدده \n━━━━━━━━\n"
 for k,v in pairs(list) do
@@ -7948,22 +7418,12 @@ end
 send(msg.chat_id_, msg.id_,"["..text.."]")
 end
 if text == "اضف رد متعدد" and DeveloperBot1(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 redis:set(bot_id.."botss:NightRang:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,"ارسل الرد الذي اريد اضافته")
 end
 if text == "حذف رد متعدد" and DeveloperBot1(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 redis:set(bot_id.."botss:NightRang:Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,"ارسل الان الكلمه لحذفها ")
 end
@@ -8027,12 +7487,7 @@ send(msg.chat_id_, msg.id_,texting[Textes])
 end
 end
 if text ==("المالك") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local admins = data.members_
 for i=0 , #admins do
@@ -8051,12 +7506,7 @@ end
 end,nil)   
 end
 if text ==("رفع المالك") and DeveloperBot(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local admins = data.members_
 for i=0 , #admins do
@@ -8076,23 +7526,13 @@ end,nil)
 end,nil)   
 end
 if text and text:match("^تعيين عدد الاعضاء (%d+)$") and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:set(bot_id..'NightRang:Num:Add:Bot',text:match("تعيين عدد الاعضاء (%d+)$") ) 
 send(msg.chat_id_, msg.id_,'*•  تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعيين عدد الاعضاء (%d+)$")..' عضو *')
 end
 
 if text and text:match("^تغيير الاشتراك$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8103,12 +7543,7 @@ return false
 end
 
 if text and text:match("^تغيير رساله الاشتراك$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8118,12 +7553,7 @@ send(msg.chat_id_, msg.id_, '• حسنا ارسل لي النص الذي تري
 return false  
 end
 if text == "حذف رساله الاشتراك" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8133,12 +7563,7 @@ send(msg.chat_id_, msg.id_, "• تم مسح رساله الاشتراك ")
 return false  
 end
 if text and text:match("^وضع قناة الاشتراك$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8148,12 +7573,7 @@ send(msg.chat_id_, msg.id_, '• حسنا ارسل لي معرف القناة')
 return false  
 end
 if text == "تفعيل الاشتراك" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8168,12 +7588,7 @@ end
 return false  
 end
 if text == "تعطيل الاشتراك" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8184,12 +7599,7 @@ send(msg.chat_id_, msg.id_, "• تم تعطيل الاشتراك الاجبار
 return false  
 end
 if text == "الاشتراك الاجباري" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8208,12 +7618,7 @@ dofile("Info_Sudo.lua")
 send(msg.chat_id_, msg.id_, "تم اعادة تشغيل بوت و تحسينه")
 end
 if text == "اضف سوال كت تويت" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8222,12 +7627,7 @@ redis:set(bot_id.."NightRang:gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..
 return send(msg.chat_id_, msg.id_,"ارسل السؤال الان ")
 end
 if text == "حذف سوال كت تويت" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8243,12 +7643,7 @@ redis:sadd(bot_id.."NightRang:gamebot:List:Manager", text)
 return false end
 end
 if text == 'كت تويت' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if redis:get(bot_id..'NightRang:Lock:Game:Group'..msg.chat_id_) then
 local list = redis:smembers(bot_id.."NightRang:gamebot:List:Manager")
 if #list ~= 0 then
@@ -8258,12 +7653,7 @@ end
 end
 end
 if text == "اضف سوال مقالات" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8272,12 +7662,7 @@ redis:set(bot_id.."makal:bots:set"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,"ارسل السؤال الان ")
 end
 if text == "حذف سوال مقالات" then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8304,12 +7689,7 @@ send(msg.chat_id_, msg.id_,Text)
 return false
 end
 if text == 'مقالات' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local list = redis:smembers(bot_id.."makal:bots")
 if #list ~= 0 then
 quschen = list[math.random(#list)]
@@ -8394,12 +7774,7 @@ redis:del(bot_id.."mkal:setex:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
 end
 
 if text and text:match("تغيير (.*)") and msg.reply_to_message_id_ ~= 0 and Constructor(msg)then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local namess = text:match("تغيير (.*)")
 function start_function(extra, result, success)
 if msg.can_be_deleted_ == false then 
@@ -8417,12 +7792,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^(تغيير) @(.*) (.*)$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي فقط')
 return false
@@ -8451,12 +7821,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = TextEnd[2]}, start_function
 return false
 end
 if text == ("رفع مشرف") and msg.reply_to_message_id_ ~= 0 then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي فقط')
 return false
@@ -8477,12 +7842,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع مشرف @(.*)$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي فقط')
 return false
@@ -8511,12 +7871,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, 
 return false
 end
 if text == ("تنزيل مشرف") and msg.reply_to_message_id_ ~= 0 then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي فقط')
 return false
@@ -8537,12 +7892,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل مشرف @(.*)$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Constructor(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي فقط')
 return false
@@ -8573,12 +7923,7 @@ end
 
 
 if text == ("رفع مالك") and msg.reply_to_message_id_ ~= 0 then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not PresidentGroup(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص بالمنشئ الاساسي فقط')
 return false
@@ -8599,12 +7944,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع مالك @(.*)$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not PresidentGroup(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص بالمنشئ الاساسي فقط')
 return false
@@ -8634,12 +7974,7 @@ return false
 end
 
 if text == ("تنزيل مالك") and msg.reply_to_message_id_ ~= 0 then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not PresidentGroup(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص بالمنشئ الاساسي فقط')
 return false
@@ -8660,12 +7995,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل مالك @(.*)$") then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not PresidentGroup(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص بالمنشئ الاساسي فقط')
 return false
@@ -8694,12 +8024,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, 
 return false
 end
 if text == 'منع' and tonumber(msg.reply_to_message_id_) > 0 then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ')
 return false
@@ -8731,12 +8056,7 @@ end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, cb, nil)
 end
 if text == 'الغاء منع' and tonumber(msg.reply_to_message_id_) > 0 then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ')
 return false
@@ -8768,12 +8088,7 @@ end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, cb, nil)
 end
 if text == 'مسح قائمة منع المتحركات' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ')
 return false
@@ -8782,12 +8097,7 @@ redis:del(bot_id.."filteranimation"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,'• تم مسح قائمة منع المتحركات')  
 end
 if text == 'مسح قائمة منع الصور' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ')
 return false
@@ -8796,12 +8106,7 @@ redis:del(bot_id.."filterphoto"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,'• تم مسح قائمة منع الصور')  
 end
 if text == 'مسح قائمة منع الملصقات' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Owner(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - مدير - منشئ')
 return false
@@ -8811,12 +8116,7 @@ send(msg.chat_id_, msg.id_,'• تم مسح قائمة منع الملصقات')
 end
 
 if text == 'تغيير الايدي' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Admin(msg) then 
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n الامر يخص - الادمن - مدير فقط')
 return false
@@ -8862,12 +8162,7 @@ redis:set(bot_id.."NightRang:Set:Id:Group"..msg.chat_id_,Text_Rand)
 send(msg.chat_id_, msg.id_,'܁تم تغيير الايدي قم بالتجربه ')
 end
 if text == 'تعيين الايدي عام' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -8898,12 +8193,7 @@ redis:set(bot_id.."KLISH:ID:bot",CHENGER_ID)
 send(msg.chat_id_, msg.id_,'܁تم تعيين الايدي بنجاح')    
 end
 if text == 'حذف الايدي عام' or text == 'مسح الايدي عام' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -9014,12 +8304,7 @@ end,nil)
 end
 
 if text == 'ايدي' or text == 'كشف' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if tonumber(msg.reply_to_message_id_) > 0 then
 function Function_Status(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
@@ -9073,12 +8358,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Status,
 return false
 end
 if text =='الاحصائيات' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end 
+ 
 if not DeveloperBot(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -9086,12 +8366,7 @@ end
 send(msg.chat_id_, msg.id_,'*• عدد الاحصائيات الكامله \n━━━━━━━━\n• عدد المجموعات : '..(redis:scard(bot_id..'NightRang:ChekBotAdd') or 0)..'\n• عدد المشتركين : '..(redis:scard(bot_id..'NightRang:Num:User:Pv') or 0)..'*')
 end
 if text == 'تاك للكل' or text == 'منشن' and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 400},function(ta,yazon)
 t = "\n• قائمة الاعضاء \n━━━━━━━━━\n"
 local list = yazon.members_
@@ -9130,12 +8405,7 @@ end
 end,nil)
 end
 if text == 'تحويل ملصق' and tonumber(msg.reply_to_message_id_) > 0 then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 tdcli_function({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},function(arg,data)
 if data.content_.ID == 'MessagePhoto' then
 if data.content_.photo_ then
@@ -9162,12 +8432,7 @@ end
 end, nil)
 end
 if text == 'صوره' and tonumber(msg.reply_to_message_id_) > 0 then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 tdcli_function({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},function(arg,data)
 if data.content_.ID == "MessageSticker" then    
 local File = json:decode(https.request('https://api.telegram.org/bot' .. token .. '/getfile?file_id='..data.content_.sticker_.sticker_.persistent_id_) ) 
@@ -9180,12 +8445,7 @@ end
 end, nil)
 end
 if text == 'تغيير C' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -9230,12 +8490,7 @@ return false
 end
 
 if text == 'رفع نسخه الاحتياطيه' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -9252,12 +8507,7 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text == 'رفع المشتركين' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -9279,12 +8529,7 @@ end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
 end
 if text == 'جلب المشتركين' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -9306,12 +8551,7 @@ sendDocument(msg.chat_id_, msg.id_, './users.json', 'عدد المشتركين :
 end 
 
 if text == 'جلب نسخه الاحتياطيه' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص Carbon فقط')
 return false
@@ -9319,12 +8559,7 @@ end
 GetFile_Bot(msg)
 end
 if text == 'اوامر القفل' and Admin(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Texti = 'تستطيع قفل وفتح عبر الازرار'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -9406,12 +8641,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Texti).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == 'اوامر التعطيل' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local Texti = 'تستطيع تعطيل وتفعيل عبر الازرار'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -9462,24 +8692,14 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Texti).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == 'تنزيل الكل' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id.."NightRang:Manager:Group"..msg.chat_id_)
 redis:del(bot_id.."NightRang:Admin:Group"..msg.chat_id_)
 redis:del(bot_id.."NightRang:Vip:Group"..msg.chat_id_)
 return send(msg.chat_id_, msg.id_, "•  تم مسح جميع رتب المجموعه")
 end
 if text == 'الالعاب' then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 send(msg.chat_id_, msg.id_,[[
 قائمة الألعاب في البوت
 • معاني .
@@ -9495,12 +8715,7 @@ send(msg.chat_id_, msg.id_,[[
 ]])
 end
 if text == 'تغير شكل السورس' and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:set(bot_id..'NightRang:new:sourse'..msg.chat_id_..msg.sender_user_id_,'true1') 
 send2(msg.chat_id_, msg.id_, 'ارسل رمز بدلا عن هاذا \n ━━━━━━━━')
 return false
@@ -9518,24 +8733,14 @@ send(msg.chat_id_, msg.id_, 'تم تغير شكل السورس')
 return false
 end
 if text == 'حذف شكل السورس' and Dev_Bots(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 redis:del(bot_id..'NightRang:new:sourse1')
 redis:del(bot_id..'NightRang:new:sourse2')
 send(msg.chat_id_, msg.id_, 'تم حظف تغير شكل السورس')
 end
 
 if text == 'كشف المجموعه' and Owner(msg) then
-local channelchek = https.request('https://devstorm.ml/ch/?id='..msg.sender_user_id_)
-local chekjoine = JSON.decode(channelchek)
-if chekjoine.Ch_Member.Ch_info ~= true then
-send(msg.chat_id_, msg.id_,'• عليك الاشتراك بقناة السورس \n • قناة السورس - [@NightRang] ') 
-return false
-end
+
 local list1 = redis:smembers(bot_id.."NightRang:Constructor:Group"..msg.chat_id_)
 local list2 = redis:smembers(bot_id.."NightRang:Manager:Group"..msg.chat_id_)
 local list3 = redis:smembers(bot_id.."NightRang:Admin:Group"..msg.chat_id_)
