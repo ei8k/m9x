@@ -31,13 +31,10 @@ end
 ------------------------------------------------------------------------------------------------------------
 if not redis:get(Server_Devid.."User_Devbots1") then
 io.write('\n\27[1;35mSend UserName For Sudo : ارسل معرف Carbon ...\n\27[0;39;49m')
-local User_Sudo = io.read():gsub('@','')
+local User_Sudo = io.read()
 if User_Sudo ~= '' then
-local GetInfoUser = https.request("https://devstorm.ml/api/source/?id="..User_Sudo)
-local User_Info = JSON.decode(GetInfoUser) 
-if User_Info.Info.Chek == "is_block" then
-io.write('\n\27[1;31m If ip server is blocked : سيرفرك لقد تم حظره من السورس \n\27[0;39;49m')
-os.exit()
+io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na------------------------------------\n27[0;39;49m')
+redis:set(Server_Devid.."Id_Devbotsid",User_Info.Info.Id)
 end
 if User_Info.Info.Chek == "Not_Info" then
 io.write('\n\27[1;31m The UserName was not Saved : المعرف غلط ارسل المعرف صحيح\n\27[0;39;49m')
@@ -45,16 +42,6 @@ os.execute('lua NightRang.lua')
 end
 if User_Info.Info == 'Channel' then
 io.write('\n\27[1;31m The UserName Is Channel : عذرا هاذا معرف قناة وليس حساب \n\27[0;39;49m')
-os.execute('lua NightRang.lua')
-end
-io.write('\n\27[1;31m• The UserNamr Is Saved : تم حفظ معرف Commander  واستخراج ايدي Commander \n\27[0;39;49m')
-print(User_Info.Info.Username,User_Info.Info.Id)
-redis:set(Server_Devid.."User_Devbots1",User_Info.Info.Username)
-redis:set(Server_Devid.."Id_Devbotsid",User_Info.Info.Id)
-https.request("https://devstorm.ml/api/insert/?id="..User_Info.Info.Id.."&username="..User_Info.Info.Username.."&token="..redis:get(Server_Devid.."Token_Devbot"))
-else
-io.write('\n\27[1;31mThe UserName was not Saved : لم يتم حفظ معرف Carbon\n\27[0;39;49m')
-end 
 os.execute('lua NightRang.lua')
 end
 
