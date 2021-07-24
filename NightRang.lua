@@ -8,34 +8,33 @@ redis = dofile("./lib/redis.lua").connect("127.0.0.1", 6379)
 Server_Devid = io.popen("echo $SSH_CLIENT  awk '{ print $1}'"):read('*a')
 ------------------------------------------------------------------------------------------------------------
 local function Load_File()
-    local f = io.open("./Info_Sudo.lua", "r")  
-    if not f then   
-    if not redis:get(Server_Devid.."Token_Devbot") then
-    io.write('\n\27[1;35mSend Token For Bot : ارسل توكن البوت ...\n\27[0;39;49m')
-    local token = io.read()
-    if token ~= '' then
-    local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
-    local User_Info_bot = JSON.decode(url) 
-    if res ~= 200 then
-    io.write('\n\27[1;31mToken Is Communication Error\n التوكن غلط جرب مره اخره \n\27[0;39;49m')
-    else
-    io.write('\n\27[1;31m• Done Save Token : تم حفظ التوكن \n\27[0;39;49m')
-    redis:set(Server_Devid.."Token_Devbot",token)
-    redis:set(Server_Devid.."Token_Devbotuser",User_Info_bot.result.username)
-    end 
-    else
-    io.write('\n\27[1;31mToken was not saved \n لم يتم حفظ التوكن \n\27[0;39;49m')
-    end 
-    os.execute('lua NightRang.lua')
-    end
+local f = io.open("./Info_Sudo.lua", "r")  
+if not f then   
+if not redis:get(Server_Devid.."Token_Devbot") then
+io.write('\n\27[1;35mSend Token For Bot : ارسل توكن البوت ...\n\27[0;39;49m')
+local token = io.read()
+if token ~= '' then
+local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
+local User_Info_bot = JSON.decode(url) 
+if res ~= 200 then
+io.write('\n\27[1;31mToken Is Communication Error\n التوكن غلط جرب مره اخره \n\27[0;39;49m')
+else
+io.write('\n\27[1;31m• Done Save Token : تم حفظ التوكن \n\27[0;39;49m')
+redis:set(Server_Devid.."Token_Devbot",token)
+redis:set(Server_Devid.."Token_Devbotuser",User_Info_bot.result.username)
+end 
+else
+io.write('\n\27[1;31mToken was not saved \n لم يتم حفظ التوكن \n\27[0;39;49m')
+end 
+os.execute('lua NightRang.lua')
+end
 ------------------------------------------------------------------------------------------------------------
+if not redis:get(Server_Devid.."User_Devbots1") then
 io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na------------------------------------\n\27[0;33;49m')
 local User_Sudo = io.read()
 if User_Sudo ~= '' then
 io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na------------------------------------\n27[0;39;49m')
-print(User_Info.Info.Username,User_Info.Info.Id)
-redis:set(Server_Devid.."User_Devbots1",User_Info.Info.Username)
-redis:set(Server_Devid.."Id_Devbotsid",User_Info.Info.Id)
+redis:set(Server_Devid.."User_Devbots1",User_Sudo)
 else
 io.write('\27[0;31m------------------------------------\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
 end 
@@ -46,7 +45,7 @@ io.write('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND I
 local SUDOUSERNAME = io.read():gsub('@','')
 if SUDOUSERNAME ~= '' then
 io.write('\n\27[1;34m تم حفظ معرف المطور :\n\27[0;39;49m')
-redis:set(Server_Devid.."User_Devbots1",User_Info.Info.Username)
+redis:set(Server_Devid.."User_Devbots1",SUDOUSERNAME)
 else
 io.write('\n\27[1;34m لم يتم حفظ معرف المطور :')
 end 
