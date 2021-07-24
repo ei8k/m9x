@@ -19,7 +19,7 @@ local User_Info_bot = JSON.decode(url)
 if res ~= 200 then
 io.write('\n\27[1;31mToken Is Communication Error\n التوكن غلط جرب مره اخره \n\27[0;39;49m')
 else
-io.write('\n\27[1;31m• Done Save Token : تم حفظ التوكن \n\27[0;39;49m')
+io.write('\n\27[1;31m◍ Done Save Token : تم حفظ التوكن \n\27[0;39;49m')
 redis:set(Server_Devid.."Token_Devbot",token)
 redis:set(Server_Devid.."Token_Devbotuser",User_Info_bot.result.username)
 end 
@@ -29,19 +29,26 @@ end
 os.execute('lua NightRang.lua')
 end
 ------------------------------------------------------------------------------------------------------------
-if not redis:get(Server_Devid.."User_Devbots1") then
-io.write('\n\27[1;35mSend UserName For Sudo : ارسل معرف Carbon ...\n\27[0;39;49m')
-local User_Sudo = io.read()
-if User_Sudo ~= '' then
+if not redis:get(Server_Devid.."Id_Devbotsid") then
+io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na------------------------------------\n\27[0;33;49m')
+local USER_SUDO = io.read()
+if USER_SUDO ~= '' then
 io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na------------------------------------\n27[0;39;49m')
-redis:set(Server_Devid.."Id_Devbotsid",User_Info.Info.Id)
-end
-if User_Info.Info.Chek == "Not_Info" then
-io.write('\n\27[1;31m The UserName was not Saved : المعرف غلط ارسل المعرف صحيح\n\27[0;39;49m')
+redis:set(Server_Devid.."Id_Devbotsid",USER_SUDO)
+else
+io.write('\27[0;31m------------------------------------\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
+end 
 os.execute('lua NightRang.lua')
 end
-if User_Info.Info == 'Channel' then
-io.write('\n\27[1;31m The UserName Is Channel : عذرا هاذا معرف قناة وليس حساب \n\27[0;39;49m')
+if not redis:get(Server_Devid.."User_Devbots1") then
+io.write('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
+local SUDOUSERNAME = io.read():gsub('@','')
+if SUDOUSERNAME ~= '' then
+io.write('\n\27[1;34m تم حفظ معرف المطور :\n\27[0;39;49m')
+redis:set(Server_Devid.."User_Devbots1",SUDOUSERNAME)
+else
+io.write('\n\27[1;34m لم يتم حفظ معرف المطور :')
+end 
 os.execute('lua NightRang.lua')
 end
 
