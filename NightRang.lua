@@ -30,15 +30,24 @@ os.execute('lua NightRang.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 if not redis:get(Server_Devid.."User_Devbots1") then
-io.write('\n\27[1;35mSend UserName For Sudo : ارسل معرف Carbon ...\n\27[0;39;49m')
-local User_Sudo = io.read():gsub('@','')
+io.write('\n\27[1;35m⬇Send UserName For Sudo : ارسل معرف Carbon ...\n\27[0;39;49m')
+local User_Sudo = io.read()
 if User_Sudo ~= '' then
-io.write('\n\27[1;31m• The UserNamr Is Saved : تم حفظ معرف Commander  واستخراج ايدي Commander \n\27[0;39;49m')
-print(User_Info.Info.Username,User_Info.Info.Id)
-redis:set(Server_Devid.."User_Devbots1",User_Info.Info.Username)
-redis:set(Server_Devid.."Id_Devbotsid",User_Info.Info.Id)
+io.write('\n\27[1;31m◦ The UserNamr Is Saved : تم حفظ معرف Commander  واستخراج ايدي Commander \n\27[0;39;49m')
+redis:set(Server_Devid.."User_Devbots1",User_Sudo)
 else
 io.write('\n\27[1;31mThe UserName was not Saved : لم يتم حفظ معرف Carbon\n\27[0;39;49m')
+end 
+os.execute('lua NightRang.lua')
+end
+if not redis:get(Server_Devid.."Id_Devbotsid") then
+io.write('\n\27[1;35m⬇Send id For Sudo : ارسل ايدي Carbon ...\n\27[0;39;49m')
+local User_Sudo = io.read()
+if User_Sudo ~= '' then
+io.write('\n\27[1;31m◦ The id Is Saved : تم حفظ ايدي Commander  واستخراج ايدي Commander \n\27[0;39;49m')
+redis:set(Server_Devid.."Id_Devbotsid",User_Sudo)
+else
+io.write('\n\27[1;31mThe id was not Saved : لم يتم حفظ ايدي Carbon\n\27[0;39;49m')
 end 
 os.execute('lua NightRang.lua')
 end
