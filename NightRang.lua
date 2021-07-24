@@ -30,24 +30,15 @@ os.execute('lua NightRang.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 if not redis:get(Server_Devid.."User_Devbots1") then
-io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na------------------------------------\n\27[0;33;49m')
-local User_Sudo = io.read()
+io.write('\n\27[1;35mSend UserName For Sudo : ارسل معرف Carbon ...\n\27[0;39;49m')
+local User_Sudo = io.read():gsub('@','')
 if User_Sudo ~= '' then
-io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na------------------------------------\n27[0;39;49m')
-redis:set(Server_Devid.."User_Devbots1",User_Sudo)
+io.write('\n\27[1;31m• The UserNamr Is Saved : تم حفظ معرف Commander  واستخراج ايدي Commander \n\27[0;39;49m')
+print(User_Info.Info.Username,User_Info.Info.Id)
+redis:set(Server_Devid.."User_Devbots1",User_Info.Info.Username)
+redis:set(Server_Devid.."Id_Devbotsid",User_Info.Info.Id)
 else
-io.write('\27[0;31m------------------------------------\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
-end 
-os.execute('lua NightRang.lua')
-end
-if not redis:get(Server_Devid.."User_Devbots1") then
-io.write('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
-local SUDOUSERNAME = io.read():gsub('@','')
-if SUDOUSERNAME ~= '' then
-io.write('\n\27[1;34m تم حفظ معرف المطور :\n\27[0;39;49m')
-redis:set(Server_Devid.."User_Devbots1",SUDOUSERNAME)
-else
-io.write('\n\27[1;34m لم يتم حفظ معرف المطور :')
+io.write('\n\27[1;31mThe UserName was not Saved : لم يتم حفظ معرف Carbon\n\27[0;39;49m')
 end 
 os.execute('lua NightRang.lua')
 end
@@ -57,7 +48,7 @@ local Dev_Info_Sudo = io.open("Info_Sudo.lua", 'w')
 Dev_Info_Sudo:write([[
 do 
 local File_Info = {
-id_dev = ]]..redis:get(Server_Devid.."User_Devbots1")..[[,
+id_dev = ]]..redis:get(Server_Devid.."Id_Devbotsid")..[[,
 UserName_dev = "]]..redis:get(Server_Devid.."User_Devbots1")..[[",
 Token_Bot = "]]..redis:get(Server_Devid.."Token_Devbot")..[["
 }
@@ -107,7 +98,7 @@ os.execute(CmdRun)
 Status = true
 else   
 f:close()  
-redis:del(Server_Devid.."Token_Devbot");redis:del(Server_Devid.."User_Devbots1");redis:del(Server_Devid.."User_Devbots1")
+redis:del(Server_Devid.."Token_Devbot");redis:del(Server_Devid.."Id_Devbotsid");redis:del(Server_Devid.."User_Devbots1")
 Status = false
 end  
 return Status
