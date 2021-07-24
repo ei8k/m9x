@@ -29,12 +29,12 @@ end
 os.execute('lua NightRang.lua')
 end
 ------------------------------------------------------------------------------------------------------------
-if not redis:get(Server_Devid.."Id_Devbotsid") then
+if not redis:get(Server_Devid.."User_Devbots1") then
 io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na------------------------------------\n\27[0;33;49m')
-local USER_SUDO = io.read()
-if USER_SUDO ~= '' then
+local User_Sudo = io.read()
+if User_Sudo ~= '' then
 io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na------------------------------------\n27[0;39;49m')
-redis:set(Server_Devid.."Id_Devbotsid",USER_SUDO)
+redis:set(Server_Devid.."User_Devbots1",User_Sudo)
 else
 io.write('\27[0;31m------------------------------------\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
 end 
@@ -45,7 +45,7 @@ io.write('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND I
 local SUDOUSERNAME = io.read():gsub('@','')
 if SUDOUSERNAME ~= '' then
 io.write('\n\27[1;34m تم حفظ معرف المطور :\n\27[0;39;49m')
-redis:set(Server_Devid.."User_Devbots1",SUDOUSERNAME)
+redis:set(Server_Devid.."User_Devbots1",User_Info.Info.Username)
 else
 io.write('\n\27[1;34m لم يتم حفظ معرف المطور :')
 end 
@@ -57,7 +57,7 @@ local Dev_Info_Sudo = io.open("Info_Sudo.lua", 'w')
 Dev_Info_Sudo:write([[
 do 
 local File_Info = {
-id_dev = ]]..redis:get(Server_Devid.."Id_Devbotsid")..[[,
+id_dev = ]]..redis:get(Server_Devid.."User_Devbots1")..[[,
 UserName_dev = "]]..redis:get(Server_Devid.."User_Devbots1")..[[",
 Token_Bot = "]]..redis:get(Server_Devid.."Token_Devbot")..[["
 }
@@ -107,7 +107,7 @@ os.execute(CmdRun)
 Status = true
 else   
 f:close()  
-redis:del(Server_Devid.."Token_Devbot");redis:del(Server_Devid.."Id_Devbotsid");redis:del(Server_Devid.."User_Devbots1")
+redis:del(Server_Devid.."Token_Devbot");redis:del(Server_Devid.."User_Devbots1");redis:del(Server_Devid.."User_Devbots1")
 Status = false
 end  
 return Status
