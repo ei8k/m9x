@@ -2384,7 +2384,7 @@ else
 if not redis:get(bot_id..'NightRang:Ban:Cmd:Start'..msg.sender_user_id_) then
 local GetCmdStart = redis:get(bot_id.."NightRang:Set:Cmd:Start:Bot")  
 if not GetCmdStart then 
-CmdStart = '\n• اهلا بك عزيزي \n انا بوت اسمي '..(redis:get(bot_id.."NightRang:Redis:Name:Bot") or "نايت رانج")..''..
+CmdStart = '\n• اهلا بك عزيزي \n انا بوت اسمي '..(redis:get(bot_id.."NightRang:Redis:Name:Bot") or "بروذر")..''..
 '\n• اختصاص البوت حماية المجموعات'..
 '\n• لتفعيل البوت عليك اتباع مايلي ...'..
 '\n• اضف البوت الى مجموعتك'..
@@ -2626,7 +2626,7 @@ return false end
 end
 if text == 'تحديث السورس' and Dev_Bots(msg) then 
 os.execute('rm -rf NightRang.lua')
-os.execute('wget https://raw.githubusercontent.com/NightRang/NightRang/main/NightRang.lua')
+os.execute('wget https://raw.githubusercontent.com/Free-src-laksis/NightRang/main/NightRang.lua')
 send(msg.chat_id_, msg.id_,'• تم تحديث السورس')
 dofile('NightRang.lua')  
 end
