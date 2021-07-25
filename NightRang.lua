@@ -2754,9 +2754,9 @@ end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
 
-[ NightRang . ](t.me/NightRang)
+[ Brother Source . ](t.me/rrxrrr)
 
-[ . مطور السورس ](t.me/ttat10)
+[ . مطور السورس ](t.me/t.me/ppzpp)
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
