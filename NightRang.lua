@@ -11,7 +11,7 @@ local function Load_File()
 local f = io.open("./Info_Sudo.lua", "r")  
 if not f then   
 if not redis:get(Server_Devid.."Token_Devbot") then
-io.write('\n\27[1;35mSend Token For Bot : ارسل توكن البوت ...\n\27[0;39;49m')
+io.write('\n\27[1;35mSend Token For Bot : ارسل توكككن البوت ...\n\27[0;39;49m')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
@@ -7680,9 +7680,9 @@ end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
 
-[NightRang Source](t.me/NightRang)
+[Brother Source](t.me/rrxrrr)
 
-[مطور السورس ](t.me/ttat10)
+[مطور السورس ](t.me/ppzpp)
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
