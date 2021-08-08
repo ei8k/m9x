@@ -11,7 +11,7 @@ local function Load_File()
 local f = io.open("./Info_Sudo.lua", "r")  
 if not f then   
 if not redis:get(Server_Devid.."Token_Devbot") then
-io.write('\n\27[1;35mSend Token For Bot : ارسل توكككن البوت ...\n\27[0;39;49m')
+io.write('\n\27[1;35mSend Token For Bot : ارسللالتوكن البوت ...\n\27[0;39;49m')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
